@@ -23,8 +23,8 @@ into a C++ app to see it working on your system if you want to test it.
     cout << *pNum << endl;  // output will be the value in the address
 
     *pNum = 45;     // change the underlying value of num
-    cout << *pNum << endl;
-    cout << num << endl;
+    cout << *pNum << endl;    // output is 45
+    cout << num << endl;      // output is 45
 ```
 What is being demonstrated here is that **we are using the dereference operator to change the underlying value of num**, indirectly.
 The two last cout lines demonstrate that the value of num and *pNum are precisely the same value. You might be thinking at 
