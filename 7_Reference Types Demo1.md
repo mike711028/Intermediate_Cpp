@@ -1,4 +1,7 @@
 # Reference Types Demo1
+demonstrate how the reference type affect num 
+   + the reference type and variable affect each other
+   + both of them are pointed to the same memory location
 ```cpp
 #include <iostream>
 
