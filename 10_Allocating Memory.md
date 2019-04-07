@@ -37,8 +37,14 @@ to be stored in the memory of the computer, starting at the address in pDouble.
 but the memory space storing the values are 4 bytes and 8 bytes respectively.  But how can that be when one is
 an int and the other is a double?**
 
+**Quite simply, a memory address is a fixed size on a specific computer architecture. In this case it takes 4 bytes
+to hold a memory address . The start of that memory address is what pInt and pDouble point to. The computer must know 
+the data type in order to work out how much total memory is assigned to that location.**
 
-
-
-
-
+As a concrete example, when this code was executed, the memory address for pInt was set to 00F1FBA8 and the ending 
+memory address was 00F1FBAC and the starting address for pDouble was 00F21330 with an ending address of 00F21338.  
+Doing a little hexadecimal math **we can see that pInt indeed spans 4 bytes and pDouble spans 8 bytes**.  Recall that 
+in hexadecimal, we only go as high as 9 then move on to letters so that we would count from the ending 8 in pInt to C 
+as in 9, A, B, C.  That's 4 positions. (in order to get to the ending memory address for these pointers, **simply 
+increment the pointer as in pInt++, and the computer will increase the memory address by the number of byes indicated 
+by the data type pointed to**).
