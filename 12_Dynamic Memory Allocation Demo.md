@@ -37,6 +37,6 @@ int main()
 	// and release that memory back to the operating system
 	// otherwise our application has a memory leak
 	delete pInt;
-	delete pDouble;    //*******************//
+	delete pDouble;    //******key point*************//
 }
 ```
