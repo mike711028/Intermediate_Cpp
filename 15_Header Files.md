@@ -35,7 +35,7 @@ called Math with a function for calculating the value of a base raised to an exp
     // Math.h
     // Header file for the Math class
 
-    #pragma once
+    #pragma once     // preproceoor directive tells the compiler to "only include this header once"
 
     // Math class definition
     static class Math
@@ -47,15 +47,15 @@ called Math with a function for calculating the value of a base raised to an exp
     };
 ```
 Let's evaluate the code listings one at a time.  In the first section, Math.h, we see the header file for our Math class. 
-Outside of the comments we see a line that indicates #pragma once.  This is a preprocessor directive that tells
-the compiler to only include this header once, regardless of how many times it has been imported in the program.
+Outside of the comments we see a line that indicates ```#pragma once```. **This is a preprocessor directive that tells
+the compiler to only include this header once, regardless of how many times it has been imported in the program**.
 
-Next we see the class definition, static class Math.  The static keyword needs a little explanation so let's get that out of the way first.  When we declare a class as static, it is an indicator that we do not have to instantiate the class to use it in our program.  For example, if Math were not static, before we could use it in our program, we would need to create an instance of it as shown here:
-
+Next we see the class definition, static class Math.  The ```static``` keyword needs a little explanation so let's get that out of the way first.  **When we declare a class as static, it is an indicator that we do not have to instantiate the class to use it in our program**.  For example, if Math were not static, before we could use it in our program, we would need to create an instance of it as shown here:
+```cpp
     Math math = new Math();
     math.pow(2, 8);
-
-For the Math class that we are creating in this course, we will consider it to be a utility class and therefore we want it to be static so we don't have to create an instance each time we want to use functionality in that class.
+```
+For the Math class that we are creating in this course, we will consider it to **be a utility class** and therefore we want it to **be static so we don't have to create an instance each time** we want to use functionality in that class.
 
 Next, our class definition continues with the opening curly brace and then the keyword public:   Anything after the public: keyword is considered to be of public visibility.  That is, it can be called from other classes directly.   
 
