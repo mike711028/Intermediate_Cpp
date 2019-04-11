@@ -59,10 +59,12 @@ Next we see the class definition, static class Math.  The ```static``` keyword n
 ```
 For the Math class that we are creating in this course, we will consider it to **be a utility class** and therefore we want it to **be static so we don't have to create an instance each time** we want to use functionality in that class.
 
-Next, our class definition continues with the opening curly brace and then the keyword public:   Anything after the public: keyword is considered to be of public visibility.  That is, it can be called from other classes directly.   
+Next, our class definition continues with the opening curly brace and then the keyword ```public:```
+**Anything after the public: keyword is considered to be of public visibility.  That is, it can be
+called from other classes directly.**  
 
-After public: we declare our function for generating the power of a base raised to an exponent.  Note that this method is also using the static designation.  In order to call the function from a static class, the function must also be static.
+After public: we declare our function for generating the power of a base raised to an exponent.  Note that this method is also using the ```static``` designation. **In order to call the function from a static class, the function must also be static**.
 
-Note that the function contains no implementation details however.  We simply indicate the data types of the parameters that we expect to use with this function.  As a matter of fact, we don't even have to use parameter names in this declaration at all, simply using static int Math::pow(int, int); is sufficient as we only need to indicate the data types that are expected by the function.
+Note that **the function contains no implementation details** however.  We simply indicate the data types of the parameters that we expect to use with this function.  As a matter of fact, we don't even have to use parameter names in this declaration at all, simply using ```static int Math::pow(int, int)```; is sufficient as we only need to indicate the data types that are expected by the function.
 
 The last key piece to note about this declaration of the Math class is that we end it with a semicolon after the closing curly brace.  Most new programmers have a tendency to forget this.  Microsoft Visual Studio automatically adds the semicolon for you and many newer IDEs may also do the same.
