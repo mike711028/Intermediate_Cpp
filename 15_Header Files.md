@@ -1,7 +1,7 @@
 # Header Files
    + In C++, the common prctice is to create your classes as two separate files
    + one is header file which contains all the declarations found in the class file
-   + the other is cpp file where there are all implementations of functions
+   + implement file is cpp file where there are all implementations of functions
    + #pragma once
    + static class
 
