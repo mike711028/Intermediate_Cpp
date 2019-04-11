@@ -2,7 +2,9 @@
    + In C++, the common prctice is to create your classes as two separate files
    + one is header file which contains all the declarations found in the class file
    + the other is cpp file where there are all implementations of functions
-   
+   + #pragma once
+   + static class
+
 In C++, your code will often contain multiple class files.  As a review, recall that **class files 
 allow you to model real-world objects in your code, and they also provide a container for functionality 
 and behavior of coding structures**.
@@ -50,7 +52,7 @@ Let's evaluate the code listings one at a time.  In the first section, Math.h, w
 Outside of the comments we see a line that indicates ```#pragma once```. **This is a preprocessor directive that tells
 the compiler to only include this header once, regardless of how many times it has been imported in the program**.
 
-Next we see the class definition, static class Math.  The ```static``` keyword needs a little explanation so let's get that out of the way first.  **When we declare a class as static, it is an indicator that we do not have to instantiate the class to use it in our program**.  For example, if Math were not static, before we could use it in our program, we would need to create an instance of it as shown here:
+Next we see the class definition, static class Math.  The ```static``` keyword needs a little explanation so let's get that out of the way first.  **When we declare a class as static, it is an indicator that we do not have to instantiate the class to use it in our program**.  For example, if Math were **not static**, before we could use it in our program, we would **need to create an instance of it** as shown here:
 ```cpp
     Math math = new Math();
     math.pow(2, 8);
