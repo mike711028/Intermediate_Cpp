@@ -108,3 +108,31 @@ how the age variable will be initialized.  The reason is, because **we do not in
 we declared it and because **this constructor does not initialize it either**, if you try to use the age variable 
 in an instance of Person, what result will you get?  The default constructor will initialize age to a default value 
 (dependent on compiler), **but if you call the second constructor, age may or may not get initialized**.
+
+**The final constructor takes three arguments to initialize all three member variables. When you create a new instance 
+of the Person class, you can choose any of these constructors and the compiler will know which one to use based 
+on the number of arguments you pass in as shown in this code sample**.
+
+## Demo
+````cpp
+    #include "stdafx.h"
+    #include <iostream>
+    #include "Person.h"
+    
+    using namespace std;
+    
+    int main()
+    {
+    
+        // create a Person instance using default constructor
+        Person *pOne = new Person();
+        
+        // Create a Person instance using 2 argument constructor
+        Person *pTwo = new Person("Tom", "Thumb");
+    
+        // Create a Person instance using 3 argument constructor
+        Person *pThree = new Person("Tom", "Thumb", 15);
+    
+    return 0;
+    }
+```
