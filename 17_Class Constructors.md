@@ -41,3 +41,70 @@ The compiler's default constructor is unable to initialize that member**.
 The following code sample demonstrates the use of three different constructors, **one default constructor, 
 one that accepts two arguments and one that accepts three arguments**. 
 
+## Person.h
+```
+    #pragma once
+    
+    #include <string>
+    
+    class Person
+    {
+    
+    private:
+        std::string firstName;
+        std::string lastName;
+    
+        int age;
+    
+    public:
+        Person();
+    
+        Person(std::string fName, std::string lName);
+    
+        Person(std::string fName, std::string lName, int age);
+    
+        ~Person();
+
+        void SayHello();
+    };
+```
+## Person.cpp
+```cpp
+    #include "stdafx.h"
+    #include "Person.h"
+    #include <iostream>
+    
+    Person::Person()
+    {
+    
+    }
+    
+    Person::Person(std::string fName, std::string lName)
+    {
+        this -> firstName = fName;
+        this -> lastName = lName;
+    }
+    
+    Person::Person(std::string fName, std::string lName, int age)
+    {
+        this -> firstName = fName;
+        this -> lastName = lName;
+    
+        this -> age = age;
+    }
+    
+    
+    Person::~Person()
+    {
+    }
+```
+**The first constructor is the default constructor**. It has **no parameters** and because we have **not initialized 
+our private member variables**, this constructor will do so with **the default values for data types of
+those member variables**.
+
+**The second constructor** takes two arguments and uses those to **initialize the first and last name member
+variables in the class**.  Here is where you need to do a little research on the compiler you are using to determine
+how the age variable will be initialized.  The reason is, because **we do not initialize age in the class** when 
+we declared it and because **this constructor does not initialize it either**, if you try to use the age variable 
+in an instance of Person, what result will you get?  The default constructor will initialize age to a default value 
+(dependent on compiler), **but if you call the second constructor, age may or may not get initialized**.
