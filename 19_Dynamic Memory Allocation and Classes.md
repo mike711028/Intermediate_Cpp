@@ -48,7 +48,27 @@ the members of the class, as shown in the following code sample**.
 In the first line of code, we declare a pointer * pOne and assign it a memory address using the new keyword. 
 The compiler sets aside memory for the object and assigns the first and last name values to the member variables 
 using one of the constructors in our Person class.  (Refer to previous code samples for the constructors).  
-Because the object has been dynamically allocated with the new keyword, we must use the arrow selection operator
-and we see that in the second line of code where we access the GetLastName() member function to retrieve 
-the value stored in the object pointed to by pOne.
+Because the object has been dynamically allocated with the new keyword, we must **use the arrow selection operator**
+and we see that in the second line of code **where we access the GetLastName() member function to retrieve 
+the value** stored in the object pointed to by pOne.
+
+For every object you create using the new keyword, you also need to use the delete keyword to remove the 
+reference to the memory allocated and to release that memory back to the operating system.  Failure to do so results
+in a memory leak in your application.  The memory that is taken up by the object is not released back to
+the operating system until you call delete or until the application quits.  If you continue to allocate 
+new objects with new and fail to use delete when finished with those objects, the memory used by your
+application will continue to increase.  The use of delete is rather simple as the following code snippet 
+demonstrates.
+```cpp
+    Person *pOne = new Person("Gerry", "O\'Brien");
+    std::cout << pOne->GetLastName() << endl;
+
+    // delete object, releasing memory
+    delete pOne;
+```
+**When delete is called on an object, that object's destructor is called**.  The destructor is the correct 
+location in code **perform clean up operations on your object and anything that it references**.  For example,
+you might have dynamically declared and used other objects from within your object.  In this case, you are 
+responsible for ensuring that those other objects are also destroyed and that their memory is released.  
+You do this by placing the appropriate delete statements inside your object's destructor.
 
