@@ -1,4 +1,6 @@
 # What is Class Scope?
+   + 有相同名稱的函數在不同class裡面 被呼叫時 compiler不會搞混
+   
 When we discuss scope in the context of classes, we are referring to the names of member 
 variables and member functions found within the class definition.  The scope of a class 
 within a namespace or program file is not covered in this topic.
