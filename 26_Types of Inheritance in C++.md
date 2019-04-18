@@ -110,3 +110,22 @@ This table explains the differences:
 | Type of Inheritance| | |
 |:---|:---|:---|
 |public|protected|private|
+|public members are public in derived class and can be accessed directly by **member functions and nonmember functions**|public members become protected members in derived class and can be accessed directly by **member functions**|public members become private in derived class and can be accessed directly by **member functions**|
+|protected members are protected in derived class and can be accessed directly by member functions|protected members become protected members in derived class and can be accessed directly by member functions|protected members become private in derived class and can be accessed directly by member functions|private members are hidden in derived class and can be accessed by member functions though public or protected member functions|
+|private members are hidden in derived class and can be accessed by member functions though public or protected member functions|private members are hidden in derived class and can be accessed by member functions though public or protected member functions|private members are hidden in derived class and can be accessed by member functions though public or protected member functions|
+
+You can **initialize members of the base class by calling the base class constructor from your derived class**. 
+It is recommended that you **make the call to the base class constructor as the first thing in your derived 
+class to ensure that member variables in the base class are initialized** before they are accessed or used 
+in the derived class.  The way to call the base class constructor from your derived class is demonstrated here.
+```cpp
+    Student::Student():Person("Tom", "Thumb") // initialize members of the base class
+    {
+    }
+```
+Note that immediately following the constructor for Student we see a colon and then a call to the Person 
+constructor that accepts two arguments.  You can place any valid constructor here including one that 
+takes no arguments, in which case the default constructor will be called. **Make it a good programming
+practice to call the base class constructor in this manner to ensure your base class is initialized
+before entering the body of your derived class**.  Other languages, such as Objective-C, require that
+the base class is initialized before your derived classes.
