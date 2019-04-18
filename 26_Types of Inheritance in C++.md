@@ -94,9 +94,9 @@ In the main.cpp file we declare a Student object called student1.  We then attem
 firstName variable to a value.  That line of code will generate a compiler error even though Student
 has inherited the firstName member variable from Person.  The reason is the public inheritance
 rule and the fact that **the firstName member variable is declared as private in Person**.  We'll 
-cover how to access these variables in a little bit.  But notice that the student1.SayHello() 
-function call will work as SayHello() is a public function.  Also note that in the Student.cpp class,
-we attempt to use the firstName variable directly but the compiler will throw an error
+cover how to access these variables in a little bit.  But notice that the ```student1.SayHello()``` 
+function call will work as ```SayHello()``` is a public function.  Also note that in the Student.cpp class,
+we attempt to use the ```firstName``` variable directly but the compiler will throw an error
 against this line as well.
 
 At this point you might be asking what use the private member variables are if they can't be accessed 
