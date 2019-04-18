@@ -15,7 +15,7 @@ class Vehicle     // base classes
        ...
 }; 
 
-class Car: Vehicle     // sub-classes
+class Car: Vehicle     // sub-classes 
 { 
      // member list includes Make and Color
      // **other Car specific members would go here.**
